@@ -1,0 +1,1 @@
+function redirectToProfileOrLogin(){fetch("http://localhost:3000/account/check-login").then((o=>{o.ok?window.location.href="profile.html":window.location.href="login.html"})).catch((o=>{console.error("Error:",o),window.location.href="login.html"}))}

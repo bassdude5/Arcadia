@@ -6,8 +6,8 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "build": "webpack --mode production"
-  },
+    "build": "webpack --mode production --stats-children"
+  },  
   "dependencies": {
     "bootstrap": "^5.2.3"
   },
