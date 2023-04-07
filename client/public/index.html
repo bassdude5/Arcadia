@@ -1,0 +1,167 @@
+<!--Main Page-->
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Javascript for template header and footer-->
+<script type=module src=./js/head-foot.js></script>
+
+<!--Tab Header Information-->    
+<head>
+  <meta name="viewport" content="" width="device-width" initial-scale="1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="./js/profile-redirect.js"></script>
+  <link rel="stylesheet" href="./css/default.css">
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/recommender.css">
+  <link rel="stylesheet" href="./css/card.css">
+  <title> Arcadia</title>
+</head>
+
+<body onload="populateElement(20, 'rating', 'review_box'); populateElement(20, 'released', 'release-container');">
+  <!--This div wraps the entire page-->
+  <div id="wrap">
+    <!--Header and Navigation Bar-->
+    <my-header></my-header>
+
+    <div class="content">
+
+    <!--The Newest Games-->
+    <div class="newest_games-header">
+      <h2>NEWEST GAMES</h2>
+    </div>      
+      
+
+    <!--Newest Games Carousel--> 
+    <div class="carousel-back">
+      <div class="carousel">
+        <div class="gallery-scroll">
+          <div id="release-container"></div>
+          <div class="gallery-link"><a href="./newest_games.html"> See more new games! </a></div>
+        </div>
+      </div>
+    </div>
+
+    <!--Simple Game Recommender Container-->
+    <div class="simple-container">
+      <div id="simple-recommend-body">
+        <h2>Find a new game now</h2>
+      </div>
+      <div id="results-container" style="display: none;">
+        <!-- Game recommendations will be displayed here -->
+      </div>
+      <button id="continue-button">Recommend</button>
+    </div>
+
+    <!--Latest Reviews and Search Dropdown Container -->
+    <section class="latest">
+      <div class="latest-head">
+
+        <div class="latest_reviews_header">
+          <h2>HIGHEST RATED</h2>
+        </div>
+
+        
+        <div class="filter_dropdown">
+
+          <!--Platform Dropdown-->
+          <div class="dropdown">
+            <button class="dropbtn">PLATFORM</button>
+            <div class="dropdown-content">
+              <a href="./search.html?platform=4">PC</a>
+              <a href="./search.html?platform=186">XBox Series X/S</a>
+              <a href="./search.html?platform=187">Playstation 5</a>
+              <a href="./search.html?platform=7">Nintendo Switch</a>
+            </div>
+          </div>
+
+          <!-- Year Dropdown -->
+          <div class="dropdown">
+            <button class="dropbtn">YEAR</button>
+            <div class="dropdown-content">
+              <a href="./search.html?year=2023">2023</a>
+              <a href="./search.html?year=2022">2022</a>
+              <a href="./search.html?year=2021">2021</a>
+              <a href="./search.html?year=2020">2020</a>
+              <a href="./search.html?year=2019">2019</a>
+              <a href="./search.html?year=2018">2018</a>
+              <a href="./search.html?year=2017">2017</a>
+              <a href="./search.html?year=2016">2016</a>
+              <a href="./search.html?year=2015">2015</a>
+            </div>
+          </div>
+
+          <!-- Rating Dropdown -->
+          <div class="dropdown">
+            <button class="dropbtn">RATING</button>
+            <div class="dropdown-content">
+              <a href="./search.html?rating=1">0-20</a>
+              <a href="./search.html?rating=2">20-40</a>
+              <a href="./search.html?rating=3">40-60</a>
+              <a href="./search.html?rating=4">60-80</a>
+              <a href="./search.html?rating=5">80-100</a>
+            </div>
+          </div>
+
+          <!-- Genre Dropdown -->
+          <div class="dropdown">
+            <button class="dropbtn">GENRE</button>
+            <div class="dropdown-content-genre">
+              <a href="./search.html?genre=4">Action</a>
+              <a href="./search.html?genre=51">Indie</a>
+              <a href="./search.html?genre=3">Adventure</a>
+              <a href="./search.html?genre=5">RPG</a>
+              <a href="./search.html?genre=10">Strategy</a>
+              <a href="./search.html?genre=2">Shooter</a>
+              <a href="./search.html?genre=40">Casual</a>
+              <a href="./search.html?genre=14">Simulation</a>
+              <a href="./search.html?genre=7">Puzzle</a>
+              <a href="./search.html?genre=11">Arcade</a>
+              <a href="./search.html?genre=83">Platformer</a>
+              <a href="./search.html?genre=1">Racing</a>
+              <a href="./search.html?genre=59">Massively Multiplayer</a>
+              <a href="./search.html?genre=15">Sports</a>
+              <a href="./search.html?genre=6">Fighting</a>
+              <a href="./search.html?genre=19">Family</a>
+              <a href="./search.html?genre=28">Board Games</a>
+              <a href="./search.html?genre=34">Educational</a>
+              <a href="./search.html?genre=17">Card</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="latest-body">
+          <div class="latest_reviews">
+            <div id="review_box">
+            </div>
+          </div>
+        </div>
+    </section>
+
+    </div>
+    
+    <!--Footer-->
+    <my-footer></my-footer>
+
+  </div>
+</body>
+  <script type=module src=https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js></script>
+  <script nomodule src=https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js></script>
+  <script src="./js/query.js"></script>
+  <script src="./js/simple-recommend.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+      const containers = document.querySelectorAll('#release-container, #results-container, #review_box');
+
+        containers.forEach((container) => {
+            container.addEventListener('click', (event) => {
+                if (event.target.closest('.card, .mini-card')) {
+                    const id = event.target.closest('.card, .mini-card').id.trim();
+                    console.log('Clicked: ', id)
+                    window.location.href = `results.html?id=${id}`;
+                }
+            });
+        });
+      });
+  </script>
+</html> 

@@ -1,0 +1,134 @@
+
+/* Game name title */
+
+.game-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+}
+
+/* Game display box */
+
+.game-display {
+    width: 70%;
+    min-height: 90%;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    background-color: rgba(0, 0, 0, 0.438);
+    border-radius: 20px;
+    padding: 3%;
+}
+
+/* Text on page */
+
+.game-display h3 {
+  font-size: 21px;
+  margin-left: 5%;
+  margin-right: .8%;
+  text-align: right;
+  width: 150px;
+  word-wrap: break-word;
+}
+
+.game-display p {
+  font-size: 20px;
+  margin-bottom: 1%;
+  margin-top: .1%;
+  width: 75%;
+}
+
+.game-date, .game-desc, .game-genres, .game-platforms, .rawg-rating, .meta-rating {
+  display: flex;
+}
+
+#rating-title {
+    text-align: center;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+/* Image slider */
+  
+.game-images {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 3%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 20px;
+}
+  
+.slider-wrapper {
+    display: flex;
+    border-radius: 20px;
+    height: 100%;
+}
+  
+.slider-wrapper img {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    width: 100%;
+    margin-right: 11.1%;
+    height: auto;
+    flex-shrink: 0;
+}
+  
+.slider-button {
+    width: 75px;
+    max-height: 75px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 10rem;
+    color: #000000;
+    z-index: 1;
+}
+
+.ion {
+    width: 75px;
+    max-height: 75px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 10rem;
+    color: #000000;
+    margin-left: -50%;
+    z-index: 1;
+}
+  
+.slider-button-left {
+    left: 0;
+    padding-right: 5%;
+}
+  
+.slider-button-right {
+    right: 0;
+    padding-left: 5%;
+}
+
+
+
+/*  */

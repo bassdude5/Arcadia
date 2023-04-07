@@ -1,0 +1,128 @@
+<!--PROFILE Page-->
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Javascript for template header and footer-->
+<script type=module src=./js/head-foot.js></script>
+
+<!--Tab Header Information-->    
+<head>
+    <meta name="viewport" content=""width=device-width, initial-scale="1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="./css/profile.css">
+    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/card.css">
+    <title> Arcadia</title>
+</head>
+
+
+<body>
+    <!--This div wraps the entire page-->
+    <div id="wrap">
+        <!--Header and Navigation Bar-->
+        <my-header></my-header>
+
+        <div class="content">
+            <div class="titles">
+                <h2>Welcome <strong>USER</strong></h2>
+                <button class="logout-button" href="#" onclick="logout();">Logout</button>
+            </div>
+
+            
+
+            <div class="titles">
+                <h3>About You</h3>
+            </div>
+
+            <div class="user-info-container">
+                <div id="user-info">
+                    <p id="display_name">Display Name: </p>
+                    <p id="email">Email: </p>
+                    <p id="name">Name: </p>
+                    <p id="age">Age: </p>
+                    <p id="phone_number">Phone Number: </p>
+                </div>
+            
+                <div id="edit-form" style="display:none;">
+                    <form id="update-user-form">
+                        <div class="input-group">
+                            <label for="display_name">Display Name:</label>
+                            <input type="text" id="display_name" name="display_name">
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="input-group">
+                            <label for="first_name">First Name:</label>
+                            <input type="text" id="first_name" name="first_name">
+                        </div>
+                        <div class="input-group">
+                            <label for="last_name">Last Name:</label>
+                            <input type="text" id="last_name" name="last_name">
+                        </div>
+                        <div class="input-group">
+                            <label for="age">Age:</label>
+                            <input type="number" id="age" name="age">
+                        </div>
+                        <div class="input-group">
+                            <label for="phone_number">Phone Number:</label>
+                            <input type="tel" id="phone_number" name="phone_number">
+                        </div>
+                    </form>                    
+                </div>
+                <div class="buttons-wrapper">
+                    <input class="button" id="update-btn" type="submit" form="update-user-form" value="Update" style="display:none;">
+                    <button class="button" id="edit-btn" onclick="toggleEditForm()">Edit Profile</button>
+                </div>
+            </div>
+
+            <div class="titles">
+                <h3>Favorite Games</h3>
+            </div>
+
+            <div class="display-favs">
+                <div class="carousel-back">
+                    <div class="carousel">
+                      <div class="gallery-scroll">
+                        <div id="release-container"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="titles">
+                <h3>Add Favorites</h3>
+            </div>
+
+            <div class="add-favs">
+                <h3 id="search-text">Look up game name</h3>
+                <div class="search-body-profile">
+
+                    <!--Search Bar-->
+                    <div class="search-bar">
+                      <input type="text" placeholder="Search" id="search-input">
+                    </div>
+              
+                    <p id="result"></p>
+              
+                    <div id="search-results"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Footer -->
+        <my-footer></my-footer>
+
+    </div>
+</body>
+  <!--Javascript for icons-->
+  <script type=module src=https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js></script>
+  <script nomodule src=https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js></script>
+  <script src="./js/profile.js"></script>
+  <script src="./js/query.js"></script>
+  <script src="./js/results.js"></script>
+  <script src="./js/search.js"></script>
+</html>

@@ -1,0 +1,136 @@
+.genre-card {
+  display: inline-block;
+  width: 140px;
+  height: 60px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.genre-card-content {
+  text-align: center;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.genre-card.selected {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+  
+.genre-results {
+  display: grid;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gameGenHeader {
+  font-size: 3.6em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+
+.container {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 50px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.simple-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 50px;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#genre-selection-container, #simple-recommend-body {
+  padding: 30px;
+}
+
+#genre-selection-container h2, #simple-recommend-body h2 {
+  font-size: 23px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+#genres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+#results-container {
+  flex-wrap: wrap;
+  justify-content:center;
+  padding: 20px;
+  align-items: center;
+}
+
+#results-container > * {
+  flex: 1 0 200px;
+  margin: 20px;
+}
+
+#continue-button {
+  display: block;
+  margin: 30px auto;
+  margin-top: 90px;
+  padding: 15px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #5cb85c;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#continue-button:hover {
+  background-color: #409140;
+}
+
+
+.genre-results-container {
+  width: 33%;
+  justify-content: center;
+  align-items: center;
+}
+
+.genre-results-container h2 {
+  font-size: 3.2em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.genre-games-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  justify-items: center;
+  align-items: center;
+}
+
+#result {
+  font-weight: bold;
+  text-align: center;
+}

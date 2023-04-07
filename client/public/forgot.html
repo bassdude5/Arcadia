@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="./css/forgot-password.css">
+        <title> Forgot Password </title>
+    </head>
+
+    <body>
+      <section>
+        <div class="form-box">
+            <div class="form_value">
+              <form action="http://localhost:3000/pages/forgot-password" method="post">
+                <h2>Forgot Password</h2>
+
+                <!--Email input-->
+                <div class="inputbox">
+                  <ion-icon name="mail-outline"></ion-icon>
+                  <input id="email" type="email" name="email" required>
+                  <label for="">Email</label>
+                </div>
+
+                <!--Info Output-->
+                <div class="confirm-text">
+                  <p id="output"></p>
+                </div>
+
+                <!--Submit button-->
+                <button>Send Reset Code</button>
+                <div class="register">
+                  <p>Remembered your password? <a href="./login.html">Login</a></p>
+                </div>
+              </form>
+            </div>
+        </div>
+      </section>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>

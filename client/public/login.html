@@ -1,0 +1,97 @@
+<!--Login Page-->
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Javascript for template header and footer-->
+<script type=module src=./js/head-foot.js></script>
+
+<!--Tab Header Information-->    
+<head>
+  <meta name="viewport" content="" width="device-width" initial-scale="1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="./css/default.css">
+  <link rel="stylesheet" href="./css/login.css">
+  <title> Arcadia</title>
+</head>
+
+<body onload="getCookieData()">
+   <!--This div wraps the entire page-->
+   <div id="wrap">
+    <!--Header and Navigation Bar-->
+    <my-header></my-header>
+
+    <div class="content">
+
+      <div class="login-head">
+        <h2>Login</h2>
+      </div>
+
+      <div class="form-box">
+          <div class="form_value">
+            <form action="http://localhost:3000/pages/login" method="get">
+
+              <!--Email input-->
+              <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                <input id="email" type="email" name="email" required>
+                <label for="">Email</label>
+              </div>
+
+              <!--Password input-->
+              <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input id="password" type="password" name="password" required>
+                <label for="">Password</label>
+              </div>
+
+              <!--Password recovery-->
+              <div class="forget">
+                <label for=""><input id="remember-me" type="checkbox" onclick="setcookie()">Remember Me</label>
+                <a href="./forgot.html">Forgot Password</a>
+              </div>
+
+              <!--Info Output-->
+              <div class="confirm-text">
+                <p id="output"></p>
+              </div>
+
+              <!--Register redirect-->
+              <button class="register-button" type="submit">Log in</button>
+              <div class="register">
+                <p>Don't have an account? <a href="./register.html">Register</a></p>
+              </div>
+            </form>
+          </div>
+      </div>
+
+    </div>     
+
+    <!--Footer -->
+    <my-footer></my-footer>
+
+  </div>
+</body>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="./js/remember.js"></script>
+  <script>
+    document.querySelector('form').addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    fetch('http://localhost:3000/pages/login?email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password))
+      .then((response) => {
+        if (response.status === 200) {
+          window.location.href = 'profile.html';
+        } else {
+          document.getElementById('output').textContent = 'Invalid email or password';
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  });
+  </script>
+</html>
