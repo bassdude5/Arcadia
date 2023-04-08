@@ -3,7 +3,7 @@ const express = require('express');
 const phpExpress = require('php-express')({ binPath: 'php' });
 const path = require('path');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.SERVER_PORT || 3000;
 
 // Routes to external files
 const pagesRouter = require('./routes/form');
