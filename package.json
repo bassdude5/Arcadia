@@ -10,7 +10,7 @@
     "build": "npm run build:client && npm run build:server",
     "build:client": "cd client && npm run build",
     "build:server": "echo \"No server build step\"",
-    "server": "nodemon server/server.js"
+    "server": "node server/server.js"
   },
   "author": "",
   "license": "ISC",
