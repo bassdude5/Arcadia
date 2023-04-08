@@ -7,9 +7,9 @@ module.exports = {
   entry: './webpack/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '/bundle.js',
-    publicPath: './public'
-  },  
+    filename: 'bundle.js',
+    publicPath: './',
+  },
   module: {
     rules: [
       {
@@ -32,7 +32,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: 'public/js', to: 'js' },
-        // { from: 'public/css', to: 'css' }, // Remove this line
+        { from: 'public/css', to: 'css' },
         { from: 'public/images', to: 'images' },
       ],
     }),
