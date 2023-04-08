@@ -27,7 +27,8 @@ module.exports = {
       template: './public/index.html',
       filename: 'index.html',
       crossOriginLoading: 'anonymous',
-    }),
+      inject: 'body',
+    }),    
     new CopyWebpackPlugin({
       patterns: [
         { from: 'public/js', to: 'js' },
