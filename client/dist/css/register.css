@@ -1,0 +1,126 @@
+.register-head {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.form-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 450px;
+    min-height: 600px;
+    background: transparent;
+    border:  2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    backdrop-filter: blur(12px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+.inputbox{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.inputbox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+
+input:focus ~ label,
+input:valid ~ label{
+    top: -5px;
+}
+
+
+.inputbox input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 5px;
+    color: #fff;
+}
+
+.inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+}
+
+.register-button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.reveal{
+    background: transparent;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    right: -4px;
+    top: -5px;
+    font-size: 1.2em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.login-swap{
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.login-swap a{
+    text-decoration: none!important;
+    color: #fff;
+    font-weight: 600;
+}
+
+.login-swap a:hover{
+    text-decoration: underline;
+}
+
+.confirm-text{
+    margin: -15px 15px 15px;
+    font-size: 1em;
+    font-weight: 550;
+    color:#fff;
+    display: flex;
+    justify-content: center;
+}
