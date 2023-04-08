@@ -7,8 +7,8 @@ module.exports = {
   entry: './webpack/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
-    publicPath: '/'
+    filename: '/client/dist/bundle.js',
+    publicPath: '/client/public'
   },  
   module: {
     rules: [
