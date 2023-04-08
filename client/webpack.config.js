@@ -32,7 +32,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: 'public/js', to: 'js' },
-        { from: 'public/css', to: 'css' },
+        // { from: 'public/css', to: 'css' }, // Remove this line
         { from: 'public/images', to: 'images' },
       ],
     }),
