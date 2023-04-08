@@ -22,20 +22,23 @@ app.use(sessionMiddleware);
 app.use(loggedInMiddleware);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // The phpExpress middleware
 app.engine('php', phpExpress.engine);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'php');
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(express.static(path.join(__dirname, '../client/dist')));
-
 // route to form and recommend
 app.use('/pages', [pagesRouter, emailRouter]);
 app.use('/account', accountRouter);
 app.use('/api', apiRouter);
+
+// Serve CSS files with the correct content type
+app.get('*.css', function(req, res, next) {
+  res.header('Content-Type', 'text/css');
+  next();
+});
 
 // Catch-all route to serve index.html
 app.get('*', (req, res) => {
@@ -49,4 +52,3 @@ try {
 } catch (err) {
   console.error(err);
 }
-
