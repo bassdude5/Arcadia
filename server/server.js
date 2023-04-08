@@ -42,6 +42,11 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 });
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
+try {
+  app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+  });
+} catch (err) {
+  console.error(err);
+}
+
