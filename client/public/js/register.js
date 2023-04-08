@@ -55,7 +55,7 @@ async function checkPass(event) {
 async function checkUser(email, displayName) {
   const data = { email, display_name: displayName };
 
-  const response = await fetch('http://localhost:3000/pages/check-user', {
+  const response = await fetch('http://localhost:3001/pages/check-user', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

@@ -3,7 +3,7 @@ const sliderWrapper = document.querySelector(".slider-wrapper");
 const sliderButtons = document.querySelectorAll(".slider-button");
 const gameId = urlParams.get("id");
 
-const apiBaseUrl = "http://localhost:3000/api/game";
+const apiBaseUrl = "http://localhost:3001/api/game";
 
 // Initialize the index of the current image
 let currentImageIndex = 0;

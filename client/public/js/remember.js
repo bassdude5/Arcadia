@@ -7,7 +7,7 @@ function setcookie() {
     if(rememberMeCheckbox.checked === true){
         const email = emailInput.value;
 
-        document.cookie="user="+email+";path=http://localhost:3001";
+        document.cookie="user="+email+";path=http://localhost:3000";
     }
 }
 

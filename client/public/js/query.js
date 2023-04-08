@@ -53,7 +53,7 @@ async function fetchData(endpoint, searchParams) {
         console.error('Invalid endpoint:', endpoint);
         return;
     }
-    const response = await fetch(`http://localhost:3000/api/${apiEndpoint}`, {
+    const response = await fetch(`http://localhost:3001/api/${apiEndpoint}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
