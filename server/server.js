@@ -30,7 +30,7 @@ app.set('view engine', 'php');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // route to form and recommend
 app.use('/pages', [pagesRouter, emailRouter]);
@@ -39,7 +39,7 @@ app.use('/api', apiRouter);
 
 // Catch-all route to serve index.html
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 });
 
 app.listen(port, () => {
